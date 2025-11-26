@@ -1,0 +1,41 @@
+# Configuración Apache para GreenMarket
+
+# Habilitar mod_rewrite
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteBase /
+    
+    # Redirigir todas las peticiones a index.html excepto archivos existentes
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_URI} !^/api/
+    RewriteRule ^ index.html [L]
+</IfModule>
+
+# Configuración de PHP
+<IfModule mod_php7.c>
+    php_value session.cookie_httponly 1
+    php_value session.use_only_cookies 1
+    php_value upload_max_filesize 10M
+    php_value post_max_size 10M
+</IfModule>
+
+# Headers de seguridad
+<IfModule mod_headers.c>
+    # CORS para desarrollo (ajustar en producción)
+    Header set Access-Control-Allow-Origin "*"
+    Header set Access-Control-Allow-Methods "GET, POST, PUT, DELETE, OPTIONS"
+    Header set Access-Control-Allow-Headers "Content-Type"
+    
+    # Seguridad
+    Header set X-Content-Type-Options "nosniff"
+    Header set X-Frame-Options "SAMEORIGIN"
+    Header set X-XSS-Protection "1; mode=block"
+</IfModule>
+
+# Prevenir acceso a archivos sensibles
+<FilesMatch "\.(sql|md|log|env)$">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
+

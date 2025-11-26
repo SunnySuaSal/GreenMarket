@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GreenMarket - Plataforma de Compras Locales Sustentables</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navegación -->
+    <nav id="navigation" class="nav hidden">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <div class="nav-logo">
+                    <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+                        <path d="M2 17l10 5 10-5"/>
+                        <path d="M2 12l10 5 10-5"/>
+                    </svg>
+                    <span class="nav-title">GreenMarket</span>
+                </div>
+            </div>
+            
+            <div class="nav-menu">
+                <button class="nav-btn" data-screen="catalog">
+                    Catálogo
+                </button>
+                
+                <button class="nav-btn nav-btn-cart" data-screen="cart" id="cart-btn">
+                    <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="9" cy="21" r="1"/>
+                        <circle cx="20" cy="21" r="1"/>
+                        <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
+                    </svg>
+                    Carrito
+                    <span class="cart-badge hidden" id="cart-badge">0</span>
+                </button>
+                
+                <button class="nav-btn" data-screen="orders" id="orders-btn">
+                    Mis Pedidos
+                </button>
+                
+                <button class="nav-btn" data-screen="admin" id="admin-btn">
+                    <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                        <circle cx="12" cy="7" r="4"/>
+                    </svg>
+                    Admin Panel
+                </button>
+                
+                <button class="nav-btn" data-screen="reports" id="reports-btn">
+                    Reportes
+                </button>
+                
+                <button class="nav-btn nav-btn-logout" id="logout-btn">
+                    <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/>
+                        <polyline points="16,17 21,12 16,7"/>
+                        <line x1="21" y1="12" x2="9" y2="12"/>
+                    </svg>
+                    Salir
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Contenido Principal -->
+    <main class="main-content">
+        <!-- Pantalla de Login -->
+        <section id="login-screen" class="screen active">
+            <div class="login-container">
+                <div class="login-header">
+                    <div class="login-logo">
+                        <div class="logo-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+                                <path d="M2 17l10 5 10-5"/>
+                                <path d="M2 12l10 5 10-5"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <h1 class="login-title">GreenMarket</h1>
+                    <p class="login-subtitle">Plataforma de compras locales sustentables</p>
+                </div>
+
+                <div class="login-card">
+                    <div class="login-card-header">
+                        <h2 class="login-card-title">Bienvenido</h2>
+                        <p class="login-card-subtitle">Inicia sesión o crea una cuenta para comenzar</p>
+                    </div>
+                    
+                    <div class="login-tabs">
+                        <button class="tab-btn active" data-tab="login">Iniciar Sesión</button>
+                        <button class="tab-btn" data-tab="register">Registrarse</button>
+                    </div>
+                    
+                    <!-- Formulario de Login -->
+                    <form id="login-form" class="login-form active">
+                        <div class="form-group">
+                            <label for="login-email" class="form-label">Email</label>
+                            <div class="input-group">
+                                <svg class="input-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                                    <polyline points="22,6 12,13 2,6"/>
+                                </svg>
+                                <input type="email" id="login-email" class="form-input" placeholder="tu@email.com" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="login-password" class="form-label">Contraseña</label>
+                            <div class="input-group">
+                                <svg class="input-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+                                    <circle cx="12" cy="16" r="1"/>
+                                    <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+                                </svg>
+                                <input type="password" id="login-password" class="form-input" placeholder="Tu contraseña" required>
+                            </div>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary btn-full">
+                            Iniciar Sesión
+                        </button>
+                        
+                        <div class="login-help">
+                            <p class="help-text">¿Olvidaste tu contraseña?</p>
+                            <button type="button" class="btn-link">Recuperar contraseña</button>
+                        </div>
+                    </form>
+                    
+                    <!-- Formulario de Registro -->
+                    <form id="register-form" class="login-form">
+                        <div class="form-group">
+                            <label for="register-name" class="form-label">Nombre completo</label>
+                            <div class="input-group">
+                                <svg class="input-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                                    <circle cx="12" cy="7" r="4"/>
+                                </svg>
+                                <input type="text" id="register-name" class="form-input" placeholder="Tu nombre completo" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="register-email" class="form-label">Email</label>
+                            <div class="input-group">
+                                <svg class="input-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                                    <polyline points="22,6 12,13 2,6"/>
+                                </svg>
+                                <input type="email" id="register-email" class="form-input" placeholder="tu@email.com" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="register-password" class="form-label">Contraseña</label>
+                            <div class="input-group">
+                                <svg class="input-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+                                    <circle cx="12" cy="16" r="1"/>
+                                    <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+                                </svg>
+                                <input type="password" id="register-password" class="form-input" placeholder="Mínimo 8 caracteres" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="confirm-password" class="form-label">Confirmar contraseña</label>
+                            <div class="input-group">
+                                <svg class="input-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+                                    <circle cx="12" cy="16" r="1"/>
+                                    <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+                                </svg>
+                                <input type="password" id="confirm-password" class="form-input" placeholder="Repite tu contraseña" required>
+                            </div>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary btn-full">
+                            Crear Cuenta
+                        </button>
+                    </form>
+                    
+                    <div class="guest-access">
+                        <p class="guest-text">¿Solo quieres explorar?</p>
+                        <button class="btn btn-outline btn-full" id="guest-btn">
+                            <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+                                <polyline points="9,22 9,12 15,12 15,22"/>
+                            </svg>
+                            Continuar como invitado
+                        </button>
+                    </div>
+                    
+                    <div class="demo-info">
+                        <p class="demo-text">Demo: usa admin@greenmarket.com para acceso de administrador</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pantalla de Catálogo -->
+        <section id="catalog-screen" class="screen">
+            <div class="catalog-container">
+                <div class="catalog-header">
+                    <h1 class="catalog-title">Productos Locales Sustentables</h1>
+                    <p class="catalog-subtitle">Descubre productos frescos de productores locales comprometidos con el medio ambiente</p>
+                </div>
+
+                <div class="catalog-filters">
+                    <div class="search-container">
+                        <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="11" cy="11" r="8"/>
+                            <path d="M21 21l-4.35-4.35"/>
+                        </svg>
+                        <input type="text" id="search-input" class="search-input" placeholder="Buscar productos...">
+                    </div>
+                    
+                    <div class="filter-controls">
+                        <select id="category-filter" class="filter-select">
+                            <option value="all">Todas las categorías</option>
+                            <option value="Verduras">Verduras</option>
+                            <option value="Frutas">Frutas</option>
+                            <option value="Panadería">Panadería</option>
+                        </select>
+                        
+                        <select id="sort-filter" class="filter-select">
+                            <option value="name">Ordenar por nombre</option>
+                            <option value="price-low">Precio: Menor a mayor</option>
+                            <option value="price-high">Precio: Mayor a menor</option>
+                            <option value="rating">Valoración</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div id="products-grid" class="products-grid">
+                    <!-- Los productos se cargarán dinámicamente -->
+                </div>
+
+                <div id="no-products" class="no-products hidden">
+                    <div class="no-products-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="11" cy="11" r="8"/>
+                            <path d="M21 21l-4.35-4.35"/>
+                        </svg>
+                    </div>
+                    <h3 class="no-products-title">No se encontraron productos</h3>
+                    <p class="no-products-text">Intenta ajustar tus filtros de búsqueda</p>
+                </div>
+
+                <div class="sustainability-message">
+                    <h3 class="sustainability-title">¿Por qué elegir GreenMarket?</h3>
+                    <div class="sustainability-grid">
+                        <div class="sustainability-item">
+                            <h4 class="sustainability-item-title">🌱 Productos Locales</h4>
+                            <p class="sustainability-item-text">Apoyamos a productores de tu región</p>
+                        </div>
+                        <div class="sustainability-item">
+                            <h4 class="sustainability-item-title">♻️ Sustentable</h4>
+                            <p class="sustainability-item-text">Menos huella de carbono, más frescura</p>
+                        </div>
+                        <div class="sustainability-item">
+                            <h4 class="sustainability-item-title">🤝 Comercio Justo</h4>
+                            <p class="sustainability-item-text">Precios justos para productores</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pantalla de Carrito -->
+        <section id="cart-screen" class="screen">
+            <div class="cart-container">
+                <div class="cart-header">
+                    <h1 class="cart-title">Tu Carrito de Compras</h1>
+                    <p class="cart-subtitle">Revisa tus productos antes de finalizar la compra</p>
+                </div>
+
+                <div id="empty-cart" class="empty-cart">
+                    <div class="empty-cart-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="9" cy="21" r="1"/>
+                            <circle cx="20" cy="21" r="1"/>
+                            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
+                        </svg>
+                    </div>
+                    <h2 class="empty-cart-title">Tu carrito está vacío</h2>
+                    <p class="empty-cart-text">Descubre productos locales sustentables y agrégalos a tu carrito</p>
+                    <button class="btn btn-primary" data-screen="catalog">
+                        <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="15,18 9,12 15,6"/>
+                        </svg>
+                        Continuar comprando
+                    </button>
+                </div>
+
+                <div id="cart-content" class="cart-content hidden">
+                    <div class="cart-items">
+                        <!-- Los items del carrito se cargarán dinámicamente -->
+                    </div>
+
+                    <div class="cart-summary">
+                        <div class="summary-card">
+                            <h3 class="summary-title">Resumen del Pedido</h3>
+                            <div class="summary-details">
+                                <div class="summary-row">
+                                    <span>Subtotal (<span id="item-count">0</span> productos)</span>
+                                    <span id="subtotal">$0.00</span>
+                                </div>
+                                <div class="summary-row">
+                                    <span>Envío</span>
+                                    <span id="shipping">$3.99</span>
+                                </div>
+                                <div class="summary-row">
+                                    <span>Impuestos</span>
+                                    <span id="tax">$0.00</span>
+                                </div>
+                                <div class="summary-divider"></div>
+                                <div class="summary-row summary-total">
+                                    <span>Total</span>
+                                    <span id="total">$0.00</span>
+                                </div>
+                            </div>
+                            
+                            <div id="free-shipping" class="free-shipping hidden">
+                                💡 Envío gratis en compras superiores a $25.00
+                            </div>
+                            
+                            <button class="btn btn-primary btn-full" id="checkout-btn">
+                                Finalizar Compra
+                            </button>
+                            
+                            <div class="continue-shopping">
+                                <button class="btn-link" data-screen="catalog">
+                                    <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <polyline points="15,18 9,12 15,6"/>
+                                    </svg>
+                                    Continuar comprando
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="trust-indicators">
+                            <h4 class="trust-title">Compra Segura</h4>
+                            <div class="trust-list">
+                                <div class="trust-item">
+                                    <span class="trust-check">✓</span>
+                                    <span>Productos frescos garantizados</span>
+                                </div>
+                                <div class="trust-item">
+                                    <span class="trust-check">✓</span>
+                                    <span>Entrega en 24-48 horas</span>
+                                </div>
+                                <div class="trust-item">
+                                    <span class="trust-check">✓</span>
+                                    <span>Soporte local al cliente</span>
+                                </div>
+                                <div class="trust-item">
+                                    <span class="trust-check">✓</span>
+                                    <span>100% sustentable</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pantalla de Pedidos -->
+        <section id="orders-screen" class="screen">
+            <div class="orders-container">
+                <div class="orders-header">
+                    <h1 class="orders-title">Mis Pedidos</h1>
+                    <p class="orders-subtitle">Historial de tus compras</p>
+                </div>
+
+                <div id="orders-list" class="orders-list">
+                    <!-- Los pedidos se cargarán dinámicamente -->
+                </div>
+
+                <div id="no-orders" class="no-orders">
+                    <div class="no-orders-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M16 11V7a4 4 0 0 0-8 0v4"/>
+                            <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+                        </svg>
+                    </div>
+                    <h3 class="no-orders-title">No tienes pedidos aún</h3>
+                    <p class="no-orders-text">Comienza a comprar productos locales sustentables</p>
+                    <button class="btn btn-primary" data-screen="catalog">
+                        Ver Catálogo
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pantalla de Admin -->
+        <section id="admin-screen" class="screen">
+            <div class="admin-container">
+                <div class="admin-header">
+                    <h1 class="admin-title">Panel de Administración</h1>
+                    <p class="admin-subtitle">Gestiona productos y configuraciones</p>
+                </div>
+
+                <div class="admin-content">
+                    <div class="admin-stats">
+                        <div class="stat-card">
+                            <h3 class="stat-title">Total Productos</h3>
+                            <p class="stat-value" id="total-products">0</p>
+                        </div>
+                        <div class="stat-card">
+                            <h3 class="stat-title">Productos en Stock</h3>
+                            <p class="stat-value" id="products-in-stock">0</p>
+                        </div>
+                        <div class="stat-card">
+                            <h3 class="stat-title">Categorías</h3>
+                            <p class="stat-value" id="total-categories">0</p>
+                        </div>
+                    </div>
+
+                    <div class="admin-actions">
+                        <button class="btn btn-primary" id="add-product-btn">
+                            <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <line x1="12" y1="5" x2="12" y2="19"/>
+                                <line x1="5" y1="12" x2="19" y2="12"/>
+                            </svg>
+                            Agregar Producto
+                        </button>
+                    </div>
+
+                    <div class="admin-products">
+                        <h3 class="admin-section-title">Productos</h3>
+                        <div id="admin-products-list" class="admin-products-list">
+                            <!-- Los productos se cargarán dinámicamente -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pantalla de Reportes -->
+        <section id="reports-screen" class="screen">
+            <div class="reports-container">
+                <div class="reports-header">
+                    <h1 class="reports-title">Reportes de Ventas</h1>
+                    <p class="reports-subtitle">Análisis de rendimiento y estadísticas</p>
+                </div>
+
+                <div class="reports-content">
+                    <div class="reports-stats">
+                        <div class="report-card">
+                            <h3 class="report-title">Ventas Totales</h3>
+                            <p class="report-value" id="total-sales">$0.00</p>
+                        </div>
+                        <div class="report-card">
+                            <h3 class="report-title">Pedidos Completados</h3>
+                            <p class="report-value" id="completed-orders">0</p>
+                        </div>
+                        <div class="report-card">
+                            <h3 class="report-title">Productos Vendidos</h3>
+                            <p class="report-value" id="products-sold">0</p>
+                        </div>
+                    </div>
+
+                    <div class="reports-chart">
+                        <h3 class="chart-title">Ventas por Mes</h3>
+                        <div id="sales-chart" class="chart-container">
+                            <p class="chart-placeholder">Gráfico de ventas se mostrará aquí</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Modal para agregar/editar productos -->
+    <div id="product-modal" class="modal hidden">
+        <div class="modal-overlay"></div>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">Agregar Producto</h3>
+                <button class="modal-close" id="modal-close">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="18" y1="6" x2="6" y2="18"/>
+                        <line x1="6" y1="6" x2="18" y2="18"/>
+                    </svg>
+                </button>
+            </div>
+            <form id="product-form" class="modal-form">
+                <div class="form-group">
+                    <label for="product-name" class="form-label">Nombre del Producto</label>
+                    <input type="text" id="product-name" class="form-input" required>
+                </div>
+                <div class="form-group">
+                    <label for="product-price" class="form-label">Precio</label>
+                    <input type="number" id="product-price" class="form-input" step="0.01" min="0" required>
+                </div>
+                <div class="form-group">
+                    <label for="product-category" class="form-label">Categoría</label>
+                    <select id="product-category" class="form-input" required>
+                        <option value="">Seleccionar categoría</option>
+                        <option value="Verduras">Verduras</option>
+                        <option value="Frutas">Frutas</option>
+                        <option value="Panadería">Panadería</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="product-seller" class="form-label">Vendedor</label>
+                    <input type="text" id="product-seller" class="form-input" required>
+                </div>
+                <div class="form-group">
+                    <label for="product-description" class="form-label">Descripción</label>
+                    <textarea id="product-description" class="form-input" rows="3" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="product-stock" class="form-label">Stock</label>
+                    <input type="number" id="product-stock" class="form-input" min="0" required>
+                </div>
+                <div class="form-group">
+                    <label for="product-image" class="form-label">URL de Imagen</label>
+                    <input type="url" id="product-image" class="form-input" required>
+                </div>
+                <div class="modal-actions">
+                    <button type="button" class="btn btn-outline" id="modal-cancel">Cancelar</button>
+                    <button type="submit" class="btn btn-primary">Guardar Producto</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="js/app.js"></script>
+</body>
+</html>

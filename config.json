@@ -1,0 +1,48 @@
+{
+  "name": "GreenMarket Web App",
+  "version": "1.0.0",
+  "description": "Plataforma de compras locales sustentables",
+  "type": "static-website",
+  "technologies": [
+    "HTML5",
+    "CSS3",
+    "JavaScript ES6+"
+  ],
+  "features": [
+    "Autenticación de usuarios",
+    "Catálogo de productos",
+    "Carrito de compras",
+    "Sistema de pedidos",
+    "Panel de administración",
+    "Reportes de ventas",
+    "Diseño responsive",
+    "Accesibilidad"
+  ],
+  "browserSupport": [
+    "Chrome 80+",
+    "Firefox 75+",
+    "Safari 13+",
+    "Edge 80+"
+  ],
+  "development": {
+    "server": "any-static-server",
+    "port": 8000,
+    "liveReload": true
+  },
+  "deployment": {
+    "type": "static",
+    "platforms": [
+      "Netlify",
+      "Vercel",
+      "GitHub Pages",
+      "Firebase Hosting"
+    ]
+  },
+  "author": "GreenMarket Team",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/greenmarket/web-app"
+  },
+  "homepage": "https://greenmarket.app"
+}

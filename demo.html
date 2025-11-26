@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GreenMarket - Demo de Funcionalidades</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <style>
+        .demo-container {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background: white;
+            border-radius: 1rem;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+        .demo-section {
+            margin-bottom: 2rem;
+            padding: 1.5rem;
+            border: 1px solid #e5e7eb;
+            border-radius: 0.75rem;
+        }
+        .demo-title {
+            color: #16a34a;
+            margin-bottom: 1rem;
+        }
+        .demo-list {
+            list-style: none;
+            padding: 0;
+        }
+        .demo-list li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #f3f4f6;
+        }
+        .demo-list li:last-child {
+            border-bottom: none;
+        }
+        .demo-badge {
+            display: inline-block;
+            background: #dcfce7;
+            color: #166534;
+            padding: 0.25rem 0.5rem;
+            border-radius: 0.375rem;
+            font-size: 0.75rem;
+            font-weight: 500;
+            margin-right: 0.5rem;
+        }
+        .demo-link {
+            display: inline-block;
+            background: #16a34a;
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            text-decoration: none;
+            font-weight: 500;
+            margin-top: 1rem;
+            transition: background-color 0.2s;
+        }
+        .demo-link:hover {
+            background: #15803d;
+        }
+    </style>
+</head>
+<body>
+    <div class="demo-container">
+        <h1 style="text-align: center; color: #16a34a; margin-bottom: 2rem;">
+            🌱 GreenMarket - Demo de Funcionalidades
+        </h1>
+        
+        <div class="demo-section">
+            <h2 class="demo-title">🔐 Sistema de Autenticación</h2>
+            <ul class="demo-list">
+                <li><span class="demo-badge">Login</span> Iniciar sesión con email y contraseña</li>
+                <li><span class="demo-badge">Registro</span> Crear nueva cuenta de usuario</li>
+                <li><span class="demo-badge">Invitado</span> Explorar sin registrarse</li>
+                <li><span class="demo-badge">Admin</span> Usar admin@greenmarket.com para acceso administrativo</li>
+            </ul>
+        </div>
+
+        <div class="demo-section">
+            <h2 class="demo-title">🛍️ Catálogo de Productos</h2>
+            <ul class="demo-list">
+                <li><span class="demo-badge">Búsqueda</span> Buscar por nombre, descripción o vendedor</li>
+                <li><span class="demo-badge">Filtros</span> Filtrar por categoría (Verduras, Frutas, Panadería)</li>
+                <li><span class="demo-badge">Ordenar</span> Por precio, valoración o nombre</li>
+                <li><span class="demo-badge">Detalles</span> Ver información completa de cada producto</li>
+            </ul>
+        </div>
+
+        <div class="demo-section">
+            <h2 class="demo-title">🛒 Carrito de Compras</h2>
+            <ul class="demo-list">
+                <li><span class="demo-badge">Agregar</span> Productos al carrito con un clic</li>
+                <li><span class="demo-badge">Cantidad</span> Modificar cantidades fácilmente</li>
+                <li><span class="demo-badge">Eliminar</span> Quitar productos del carrito</li>
+                <li><span class="demo-badge">Cálculos</span> Subtotal, envío e impuestos automáticos</li>
+                <li><span class="demo-badge">Envío Gratis</span> En compras superiores a $25</li>
+            </ul>
+        </div>
+
+        <div class="demo-section">
+            <h2 class="demo-title">📦 Sistema de Pedidos</h2>
+            <ul class="demo-list">
+                <li><span class="demo-badge">Confirmar</span> Finalizar compra y crear pedido</li>
+                <li><span class="demo-badge">Historial</span> Ver todos los pedidos realizados</li>
+                <li><span class="demo-badge">Estados</span> Pendiente, Confirmado, Entregado</li>
+                <li><span class="demo-badge">Detalles</span> Información completa de cada pedido</li>
+            </ul>
+        </div>
+
+        <div class="demo-section">
+            <h2 class="demo-title">⚙️ Panel de Administración</h2>
+            <ul class="demo-list">
+                <li><span class="demo-badge">Estadísticas</span> Total de productos, stock, categorías</li>
+                <li><span class="demo-badge">Agregar</span> Nuevos productos al catálogo</li>
+                <li><span class="demo-badge">Editar</span> Modificar información de productos</li>
+                <li><span class="demo-badge">Eliminar</span> Quitar productos del sistema</li>
+            </ul>
+        </div>
+
+        <div class="demo-section">
+            <h2 class="demo-title">📊 Reportes de Ventas</h2>
+            <ul class="demo-list">
+                <li><span class="demo-badge">Ventas Totales</span> Suma de todos los pedidos</li>
+                <li><span class="demo-badge">Pedidos</span> Número de pedidos completados</li>
+                <li><span class="demo-badge">Productos</span> Cantidad total de productos vendidos</li>
+                <li><span class="demo-badge">Gráficos</span> Visualización de datos (próximamente)</li>
+            </ul>
+        </div>
+
+        <div class="demo-section">
+            <h2 class="demo-title">📱 Características Técnicas</h2>
+            <ul class="demo-list">
+                <li><span class="demo-badge">Responsive</span> Optimizado para móviles y desktop</li>
+                <li><span class="demo-badge">Accesible</span> Cumple estándares de accesibilidad</li>
+                <li><span class="demo-badge">Rápido</span> Carga instantánea sin dependencias</li>
+                <li><span class="demo-badge">Offline</span> Funciona sin conexión a internet</li>
+                <li><span class="demo-badge">Persistente</span> Guarda datos en el navegador</li>
+            </ul>
+        </div>
+
+        <div style="text-align: center; margin-top: 2rem;">
+            <a href="index.html" class="demo-link">
+                🚀 Ir a la Aplicación Principal
+            </a>
+        </div>
+
+        <div style="text-align: center; margin-top: 1rem; color: #6b7280; font-size: 0.875rem;">
+            <p>GreenMarket - Conectando comunidades locales con productos sustentables</p>
+        </div>
+    </div>
+</body>
+</html>
