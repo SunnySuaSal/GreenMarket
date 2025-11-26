@@ -17,7 +17,7 @@
 **Cliente-Servidor con API REST**
 
 ```
-┌─────────────┐         HTTP/JSON         ┌─────────────┐
+┌─────────────┐         HTTP/JSON        ┌─────────────┐
 │   Cliente   │ ◄──────────────────────► │   Servidor  │
 │  (Frontend) │                          │  (Backend)  │
 │             │                          │             │
